@@ -1,0 +1,107 @@
+{
+  "id": "fortytwo",
+  "name": "Fortytwo",
+  "description": "Fortytwo Chat Completions provider.",
+  "activation": {
+    "onStartup": false
+  },
+  "enabledByDefault": true,
+  "providers": [
+    "fortytwo"
+  ],
+  "providerRequest": {
+    "providers": {
+      "fortytwo": {
+        "family": "fortytwo",
+        "openAICompletions": {
+          "supportsStreamingUsage": true
+        }
+      }
+    }
+  },
+  "modelCatalog": {
+    "discovery": {
+      "fortytwo": "refreshable"
+    },
+    "providers": {
+      "fortytwo": {
+        "baseUrl": "https://api.fortytwo.network/v1",
+        "api": "openai-completions",
+        "defaultModel": "qwen/qwen3.8-27b",
+        "models": [
+          {
+            "id": "qwen/qwen3.8-27b",
+            "name": "Qwen3.8 27B",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "contextWindow": 262144,
+            "maxTokens": 235929,
+            "cost": {
+              "input": 0.425,
+              "output": 2.55,
+              "cacheRead": 0.085,
+              "cacheWrite": 0
+            },
+            "compat": {
+              "supportsStore": false,
+              "supportsReasoningEffort": true,
+              "supportsUsageInStreaming": true,
+              "maxTokensField": "max_tokens",
+              "supportedReasoningEfforts": [
+                "none",
+                "low",
+                "medium",
+                "xhigh"
+              ],
+              "reasoningEffortMap": {
+                "off": "none"
+              },
+              "thinkingLevels": [
+                "off",
+                "low",
+                "medium",
+                "xhigh"
+              ],
+              "defaultThinkingLevel": "medium"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "setup": {
+    "providers": [
+      {
+        "id": "fortytwo",
+        "envVars": [
+          "FORTYTWO_API_KEY"
+        ]
+      }
+    ]
+  },
+  "providerAuthChoices": [
+    {
+      "provider": "fortytwo",
+      "method": "api-key",
+      "choiceId": "fortytwo-api-key",
+      "appGuidedSecret": true,
+      "choiceLabel": "Fortytwo API key",
+      "choiceHint": "Fortytwo Chat Completions",
+      "groupId": "fortytwo",
+      "groupLabel": "Fortytwo",
+      "groupHint": "Fortytwo Chat Completions",
+      "optionKey": "fortytwoApiKey",
+      "cliFlag": "--fortytwo-api-key",
+      "cliOption": "--fortytwo-api-key <key>",
+      "cliDescription": "Fortytwo API key"
+    }
+  ],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

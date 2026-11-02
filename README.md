@@ -1,6 +1,6 @@
 # Fortytwo for OpenClaw
 
-![Status](https://img.shields.io/badge/status-unreleased-grey)
+[![npm](https://img.shields.io/npm/v/fortytwo-openclaw.svg)](https://www.npmjs.com/package/fortytwo-openclaw)
 [![Discord](https://img.shields.io/badge/discord-join-7289da)](https://discord.gg/fortytwo)
 [![X Fortytwo](https://img.shields.io/twitter/follow/fortytwo?style=social)](https://x.com/fortytwo)
 
@@ -8,21 +8,10 @@ Adds [Fortytwo](https://fortytwo.network) as a model provider to [OpenClaw](http
 
 Requires OpenClaw 2026.10.9 or later and a supported Node runtime: 24.22.1+ within Node 24, or 26.12.1+.
 
-Not yet published on npm. Install from the local source checkout below.
-
 ## Install
 
-From this checkout, build a local package:
-
 ```sh
-npm ci
-npm pack
-```
-
-Review the source before installing the local archive and accepting its provider capability:
-
-```sh
-openclaw plugins install npm-pack:./fortytwo-network-openclaw-provider-0.1.0.tgz --force --accept-capabilities
+openclaw plugins install npm:fortytwo-openclaw --accept-capabilities
 ```
 
 ## Add your API key

@@ -1,5 +1,5 @@
 {
-  "name": "@fortytwo-network/openclaw-provider",
+  "name": "fortytwo-openclaw",
   "version": "0.1.0",
   "description": "Fortytwo Chat Completions provider for OpenClaw.",
   "scripts": {
@@ -35,7 +35,7 @@
       "./dist/index.js"
     ],
     "install": {
-      "npmSpec": "@fortytwo-network/openclaw-provider",
+      "npmSpec": "fortytwo-openclaw",
       "defaultChoice": "npm",
       "minHostVersion": ">=2026.10.9"
     },
